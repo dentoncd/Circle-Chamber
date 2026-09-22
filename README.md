@@ -94,7 +94,7 @@ Handles the core application logic, including:
 Clone the repository:
 
 ```bash
-git clone https://github.com/dentoncd/Circle-Chamber.git
+git clone https://github.com/dentoncd/Circle-Chamber
 ```
 
 Navigate into the repository:
