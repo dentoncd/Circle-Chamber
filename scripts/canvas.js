@@ -1,6 +1,3 @@
-// Cashawn Denton
-// Week 14 Homework
-
 window.addEventListener("load", function() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
