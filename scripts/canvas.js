@@ -13,15 +13,6 @@ window.addEventListener("load", function() {
         ctx.closePath();
     }
 
-    // Draw a random object
-    // function drawObj(obj) {
-    //     ctx.beginPath();
-    //     ctx.rect(200, 200, 40, 20);
-    //     ctx.fillStyle = obj.color;
-    //     ctx.fill();
-    //     ctx.closePath();
-    // }
-
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         balls.forEach(function(ball) {
@@ -181,10 +172,4 @@ window.addEventListener("load", function() {
     removeAllBallsButton.addEventListener("click", function() {
         balls = [];
     });
-
-// TODO: Have static objects that the balls can interact with
-
-// TODO: Have floating power-ups that the balls can interact with, ex: double or triple balls, freezy balls, speedy balls, heavy, slow
-
-// TODO: Give ball-collision with other balls
 });
