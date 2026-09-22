@@ -1,51 +1,36 @@
 # Circle Chamber
 
-Circle Chamber is a simple HTML5 Canvas project that creates colorful bouncing balls inside a browser window. The user can add or remove balls in different amounts while each ball moves independently and bounces off the edges of the canvas.
+Circle Chamber is an interactive browser-based animation built with JavaScript and the HTML5 Canvas API. The project simulates colorful bouncing balls with randomized properties and allows users to dynamically add or remove balls from the canvas.
+
+The project focuses on animation, object-based programming, event handling, and basic collision detection in JavaScript.
 
 ## Features
 
-* Randomly generated ball colors
-* Random ball sizes
-* Random movement speeds
-* Balls bounce off all four sides of the canvas
-* Add:
-
-  * 1 ball
-  * 5 balls
-  * 10 balls
-  * 100 balls
-* Remove:
-
-  * 1 ball
-  * 5 balls
-  * 10 balls
-  * All balls
-* Experimental **DO NOT CLICK** button that attempts to continuously generate balls
+* Animated bouncing balls
+* Randomized ball colors
+* Randomized sizes and movement speeds
+* Boundary collision detection
+* Dynamic creation and removal of balls
+* Multiple controls for adding and removing different numbers of balls
+* Continuous canvas animation using JavaScript
 
 ## Controls
 
-### Add Balls
-
-| Button         | Action                                       |
-| -------------- | -------------------------------------------- |
-| `+1`           | Adds one ball                                |
-| `+5`           | Adds five balls                              |
-| `+10`          | Adds ten balls                               |
-| `+100`         | Adds one hundred balls                       |
-| `DO NOT CLICK` | Attempts to add an unlimited number of balls |
-
-### Remove Balls
-
-| Button  | Action                             |
-| ------- | ---------------------------------- |
-| `-1`    | Removes one ball                   |
-| `-5`    | Removes five balls                 |
-| `-10`   | Removes ten balls                  |
-| `Clear` | Removes every ball from the canvas |
+| Control        | Action                           |
+| -------------- | -------------------------------- |
+| `+1`           | Add 1 ball                       |
+| `+5`           | Add 5 balls                      |
+| `+10`          | Add 10 balls                     |
+| `+100`         | Add 100 balls                    |
+| `-1`           | Remove 1 ball                    |
+| `-5`           | Remove 5 balls                   |
+| `-10`          | Remove 10 balls                  |
+| `Clear`        | Remove all balls                 |
+| `DO NOT CLICK` | Experimental stress-test feature |
 
 ## How It Works
 
-Each ball is represented as a JavaScript object containing:
+Each ball is stored as an object containing information about its size, position, velocity, and color.
 
 ```javascript
 {
@@ -58,11 +43,19 @@ Each ball is represented as a JavaScript object containing:
 }
 ```
 
-When a ball is created, its radius, position, movement speed, and color are randomly generated.
+When a ball is created, its properties are randomly generated.
 
-The program repeatedly redraws the canvas and updates each ball's position. When a ball reaches an edge of the canvas, its movement direction is reversed, causing it to bounce.
+The animation loop continuously:
 
-## Technologies Used
+1. Clears the canvas
+2. Draws each ball
+3. Updates each ball's position
+4. Checks for collisions with the canvas boundaries
+5. Reverses the appropriate velocity when a collision occurs
+
+This creates the effect of balls continuously bouncing around the chamber.
+
+## Technologies
 
 * HTML
 * CSS
@@ -81,18 +74,19 @@ Circle-Chamber/
 
 ### `canvas.html`
 
-Contains the page layout, canvas element, styling, and controls for adding and removing balls.
+Defines the user interface, canvas, styling, and controls.
 
 ### `canvas.js`
 
-Contains the JavaScript responsible for:
+Handles the core application logic, including:
 
-* Creating balls
-* Drawing balls to the canvas
-* Generating random colors
-* Updating ball positions
-* Detecting canvas boundaries
-* Handling button events
+* Ball creation
+* Canvas rendering
+* Animation
+* Random color generation
+* Position updates
+* Boundary collision detection
+* Button event handling
 * Adding and removing balls
 
 ## Running the Project
@@ -103,46 +97,49 @@ Clone the repository:
 git clone https://github.com/dentoncd/Circle-Chamber.git
 ```
 
-Navigate into the project:
+Navigate into the repository:
 
 ```bash
 cd Circle-Chamber
 ```
 
-Then open `canvas.html` in a browser.
+Open `canvas.html` using a browser or a local development server.
 
-Because the page loads the JavaScript file from:
+If you are using a JetBrains IDE, you can right-click `canvas.html` and select **Open in Browser**.
 
-```html
-<script src="/scripts/canvas.js"></script>
-```
+## Concepts Practiced
 
-the project may work more reliably when run through a local web server instead of opening the HTML file directly.
+This project provided practice with:
 
-For example, using JetBrains' built-in browser/server functionality, open `canvas.html` and select **Open in Browser**.
+* JavaScript objects and arrays
+* DOM event listeners
+* HTML Canvas rendering
+* Animation loops
+* Random value generation
+* Velocity and movement
+* Collision detection
+* Dynamic user interaction
 
-## Future Ideas
+## Future Improvements
 
-Some possible additions already noted in the project include:
+Possible additions include:
 
-* Static objects that balls can collide with
-* Ball-to-ball collision
-* Floating power-ups
-* Double or triple ball power-ups
-* Freeze effects
+* Ball-to-ball collision detection
+* Obstacles inside the chamber
+* Interactive power-ups
 * Speed boosts
-* Heavy or slow ball effects
+* Freeze effects
+* Different ball physics
+* User-controlled ball properties
+* Improved responsive canvas sizing
+* Performance improvements for large numbers of balls
 
-## Warning
+## Experimental Feature
 
-The **DO NOT CLICK** button contains a loop that attempts to run indefinitely:
+The **DO NOT CLICK** button is intentionally designed as an experimental stress-test feature that attempts to generate an extremely large number of balls.
 
-```javascript
-for (let i = 0; i < Infinity; ++i)
-```
+Depending on the browser and computer, using this feature may cause the page to become slow or unresponsive.
 
-Clicking it can cause the browser tab to freeze or become unresponsive.
+## About
 
-## Purpose
-
-This project was created as a JavaScript and HTML Canvas exercise to practice animation, arrays, objects, event listeners, random values, and basic collision detection.
+Circle Chamber was created to explore browser-based animation and interactive graphics using JavaScript and the HTML5 Canvas API.
